@@ -15,15 +15,62 @@
   
   <div class="container">
     <div id="img_unit">
-      <div class="photo">
-        <img src="image/BLACKPINK.jpg" alt="">
-        <div class="inner">
-          <p>コメント1 <span>nickname</span></p>
-        </div>
-
-      </div>
+      
     </div>
 
   </div>
+
+  <script>
+    var images = [
+    {
+      "path": "image/BLACKPINK.jpg",
+      "name": "name01",
+      "caption": "コメント1"
+    },
+    {
+      "path": "image/IZONE.jpg",
+      "name": "name02",
+      "caption": "コメント2"
+    },
+    {
+      "path": "image/NCT.jpeg",
+      "name": "name03",
+      "caption": "コメント3"
+    },
+    {
+      "path": "image/redvelvet.jpg",
+      "name": "name03",
+      "caption": "コメント3"
+    },
+    {
+      "path": "image/twice.jpg",
+      "name": "name03",
+      "caption": "コメント3"
+    }
+    ];
+    
+    var img;
+    var caption;
+    var div;
+
+    for (var i=0; i<images.length; i++) {
+
+    
+      img = document.createElement('img');
+      img.setAttribute('src', images[i].path);
+
+      caption = document.createElement('div');
+      caption.className = 'inner';
+      caption.innerHTML = '<p>' + '<span>' + images[i].name + '</span>' + images[i].caption + '</p>';
+
+      div = document.createElement('div');
+      div.className = 'photo';
+      div.appendChild(img);
+      div.appendChild(caption);
+
+      document.getElementById('img_unit').appendChild(div);
+    
+    }
+  </script>
 </body>
 </html>
